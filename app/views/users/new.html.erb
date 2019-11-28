@@ -1,0 +1,29 @@
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <%= form_for(@user, url: signup_path) do |f| %>
+        <%= render 'shared/error_messages' %>
+      <%= f.label :username %>
+      <%= f.text_field :username, class: 'form-control' %>
+        </br>
+      <%= f.label :salary, "Salary per annum £" %>
+      <%= f.text_field :salary, class: 'form-control' %>
+        </br>
+      <%= f.label :start_time, "Start time for work" %>
+      <%= f.select :start_time, ['00:00', '00:30', '01:00', '01:30', '02:00', '02:30', '03:00', '03:30', '04:00', '04:30', '05:00', '05:30', '06:00', '06:30', '07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00', '23:30']%>
+        </br>
+      <%= f.label :end_time, "End time for work" %>
+      <%= f.select :end_time, ['00:00', '00:30', '01:00', '01:30', '02:00', '02:30', '03:00', '03:30', '04:00', '04:30', '05:00', '05:30', '06:00', '06:30', '07:00', '07:30', '08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00', '23:30']%>
+         </br>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+        </br>
+      <%= f.label :password_confirmation, "Password confirmation" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </br>
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
