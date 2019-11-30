@@ -1,0 +1,12 @@
+
+<% provide(:title, @user.username) %>
+<h3>Hour logs </h3>
+<%= link_to 'Add entry', new_salaryhour_path, class: "btn btn-info btn-sm" %>
+<% @salaryhours.each do |salaryhour| %>
+    <% if salaryhour.user_id == @user.id %>
+        <ol>
+        <span>Hours worked: <%= salaryhour.hours.round(2) %> | £ <%= money_lost(salaryhour.hours.round(2)) %> | <%= salaryhour.created_at %> 
+        <%= link_to 'Delete', salaryhour_path(salaryhour), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "Are you sure?"} %></span>
+        </ol>
+    <% end %>
+    <% end %>

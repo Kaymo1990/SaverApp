@@ -1,14 +1,26 @@
 <% provide(:title, @user.username) %>
+<div class="nl"></div>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
     <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
-      <h1>
-        <%= @user.username %>
-        <%= @user.salary %>
-      </h1>
     </section>
   </aside>
+  </br>
+</div>
+
+<div class="container">
+<div class="greeter">Hi <%= @user.username %>, did you know <%= welcome_message %>?</div>
+<%= image_tag 'cash.png', :class => "style_image" %>
+  <div class="center">  
+  You have overworked by: 
+  </br>
+    <div class="colourwarn"><%= max_hours %> hours </div>
+  </br>
+  You have lost: 
+  </br>
+  <div class="colourwarn">£<%= max_cash %></div>
+  </div>
 </div>
