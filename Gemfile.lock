@@ -222,7 +222,7 @@ DEPENDENCIES
   rails (~> 6.0.1)
   sass-rails (>= 6)
   selenium-webdriver
-  sqlite3 (~> 1.4)
+  sqlite3
   time_of_day_attr
   turbolinks (~> 5)
   tzinfo-data
